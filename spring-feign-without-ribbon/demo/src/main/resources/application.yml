@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: demo
+
+server:
+  port: 8091
+
+say-hello:
+  ribbon:
+    eureka:
+      enabled: false
+    listOfServers: localhost:8080
