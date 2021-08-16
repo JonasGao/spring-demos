@@ -8,6 +8,17 @@ spring:
       discovery:
         enabled: true
         service-id: demo-config
+    gateway:
+      routes:
+        - id: demo_route
+          uri: lb://DEMO-APP
+          predicates:
+            - Path=/demo-route/**
+          filters:
+            - RewritePath=/demo-route/?(?<segment>.*), /$\{segment}
+      discovery:
+        locator:
+          enabled: true
   config:
     import: "configserver:"
 eureka:
@@ -17,7 +28,6 @@ eureka:
   instance:
     prefer-ip-address: true
     lease-renewal-interval-in-seconds: 1000
-    hostname: localhost
 server:
   port: 8083
 logging:
