@@ -11,17 +11,23 @@ spring:
     gateway:
       routes:
         - id: demo_route
-          uri: http://demo-app
+          uri: lb://DEMO-APP
           predicates:
-            - Path=/demo/**
+            - Path=/demo-route/**
           filters:
-            - RewritePath=/demo/?(?<segment>.*), /$\{segment}
+            - RewritePath=/demo-route/?(?<segment>.*), /$\{segment}
+      discovery:
+        locator:
+          enabled: true
   config:
     import: "configserver:"
 eureka:
   client:
     service-url:
       defaultZone: http://localhost:8080/eureka
+  instance:
+    prefer-ip-address: true
+    lease-renewal-interval-in-seconds: 1000
 server:
   port: 8083
 logging:
