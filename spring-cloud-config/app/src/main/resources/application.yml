@@ -8,13 +8,14 @@ spring:
       discovery:
         enabled: true
         service-id: demo-config
+  config:
+    import: "configserver:"
 eureka:
   client:
     service-url:
       defaultZone: http://localhost:8080/eureka
-    register-with-eureka: false
 server:
   port: 8082
-management:
-  security:
-    enabled: false
+logging:
+  level:
+    org.springframework: debug

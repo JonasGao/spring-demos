@@ -3,7 +3,12 @@ spring:
     name: demo-eureka-server
   jmx:
     enabled: false
+  mvc:
+    log-request-details: on
 eureka:
   client:
     register-with-eureka: false
     fetch-registry: false
+logging:
+  level:
+    org.springframework: debug

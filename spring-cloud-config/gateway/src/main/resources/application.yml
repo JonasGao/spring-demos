@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: demo-gateway
+  jmx:
+    enabled: false
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        service-id: demo-config
+    gateway:
+      routes:
+        - id: demo_route
+          uri: http://demo-app
+          predicates:
+            - Path=/demo/**
+          filters:
+            - RewritePath=/demo/?(?<segment>.*), /$\{segment}
+  config:
+    import: "configserver:"
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8080/eureka
+server:
+  port: 8083
+logging:
+  level:
+    org.springframework: debug
