@@ -1,6 +1,6 @@
 spring:
   application:
-    name: demo-app
+    name: demo-gateway
   jmx:
     enabled: false
   cloud:
@@ -8,8 +8,6 @@ spring:
       discovery:
         enabled: true
         service-id: demo-config
-  config:
-    import: "configserver:"
 eureka:
   client:
     service-url:
@@ -19,7 +17,7 @@ eureka:
     lease-renewal-interval-in-seconds: 1000
     hostname: localhost
 server:
-  port: 8082
+  port: 8083
 logging:
   level:
     org.springframework: debug

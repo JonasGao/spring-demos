@@ -1,0 +1,29 @@
+# 从 Spring Boot 2.4 / Spring Cloud 2020.0 版本
+# Spring 弃用了 bootstrap 的配置方式
+spring:
+  application:
+    name: demo-app
+  jmx:
+    enabled: false
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        service-id: demo-config
+  # 以下是新 Spring Boot 2.4 写法
+  # 文档参考 https://docs.spring.io/spring-cloud-config/docs/current/reference/html/#config-data-import
+  # config:
+  #  import: "configserver:"
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8080/eureka
+  instance:
+    prefer-ip-address: true
+    lease-renewal-interval-in-seconds: 1000
+    hostname: localhost
+server:
+  port: 8082
+logging:
+  level:
+    org.springframework: debug

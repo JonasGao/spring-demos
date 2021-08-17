@@ -1,0 +1,33 @@
+spring:
+  application:
+    name: demo-gateway
+  jmx:
+    enabled: false
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        service-id: demo-config
+    gateway:
+      routes:
+        - id: demo_route
+          uri: lb://DEMO-APP
+          predicates:
+            - Path=/demo-route/**
+          filters:
+            - RewritePath=/demo-route/?(?<segment>.*), /$\{segment}
+      discovery:
+        locator:
+          enabled: true
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8080/eureka
+  instance:
+    prefer-ip-address: true
+    lease-renewal-interval-in-seconds: 1000
+server:
+  port: 8083
+logging:
+  level:
+    org.springframework: debug
