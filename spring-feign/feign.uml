@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>org.springframework.cloud.netflix.feign.FeignClientsRegistrar</OriginalElement>
+  <nodes>
+    <node x="1196.92607473545" y="308.0">org.springframework.cloud.netflix.ribbon.eureka.DomainExtractingServerList</node>
+    <node x="1465.92607473545" y="308.0">com.netflix.loadbalancer.DynamicServerListLoadBalancer</node>
+    <node x="1510.168303571429" y="424.0">com.netflix.loadbalancer.ZoneAwareLoadBalancer</node>
+    <node x="336.58333333333326" y="308.0">org.springframework.cloud.netflix.feign.Targeter</node>
+    <node x="766.3265046296297" y="192.0">feign.Client</node>
+    <node x="317.6598379629629" y="510.0">org.springframework.cloud.netflix.feign.FeignClientsRegistrar</node>
+    <node x="507.65983796296297" y="76.0">com.netflix.loadbalancer.LoadBalancerContext</node>
+    <node x="20.0" y="76.0">org.springframework.cloud.netflix.feign.FeignClientSpecification</node>
+    <node x="1627.0927414021166" y="192.0">com.netflix.loadbalancer.BaseLoadBalancer</node>
+    <node x="900.9260747354499" y="308.0">com.netflix.niws.loadbalancer.DiscoveryEnabledNIWSServerList</node>
+    <node x="594.2754464285717" y="308.0">org.springframework.cloud.netflix.feign.ribbon.LoadBalancerFeignClient</node>
+    <node x="187.6598379629629" y="192.0">org.springframework.cloud.netflix.feign.FeignContext</node>
+    <node x="1723.168303571429" y="424.0">org.springframework.context.annotation.ImportBeanDefinitionRegistrar</node>
+    <node x="567.3265046296297" y="192.0">com.netflix.loadbalancer.reactive.LoadBalancerCommand</node>
+    <node x="54.44690806878316" y="308.0">org.springframework.cloud.netflix.feign.FeignAutoConfiguration</node>
+    <node x="1532.1504464285717" y="76.0">com.netflix.loadbalancer.IRule</node>
+    <node x="309.58333333333326" y="424.0">org.springframework.cloud.netflix.feign.FeignClientFactoryBean</node>
+    <node x="1282.4897321428575" y="192.0">com.netflix.loadbalancer.ServerList</node>
+    <node x="584.1572751322753" y="0.0">com.netflix.loadbalancer.ILoadBalancer</node>
+    <node x="337.6598379629629" y="192.0">org.springframework.cloud.netflix.feign.ribbon.FeignLoadBalancer</node>
+    <node x="372.65983796296297" y="76.0">com.netflix.client.IClient</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="org.springframework.cloud.netflix.ribbon.eureka.DomainExtractingServerList" target="com.netflix.loadbalancer.ServerList">
+      <point x="0.0" y="-13.0" />
+      <point x="1310.92607473545" y="288.0" />
+      <point x="1323.918303571429" y="288.0" />
+      <point x="-16.571428571428555" y="13.0" />
+    </edge>
+    <edge source="com.netflix.niws.loadbalancer.DiscoveryEnabledNIWSServerList" target="com.netflix.loadbalancer.ServerList">
+      <point x="0.0" y="-13.0" />
+      <point x="1028.92607473545" y="268.0" />
+      <point x="1290.7754464285717" y="268.0" />
+      <point x="-49.71428571428572" y="13.0" />
+    </edge>
+    <edge source="org.springframework.cloud.netflix.feign.FeignClientsRegistrar" target="org.springframework.context.annotation.ImportBeanDefinitionRegistrar">
+      <point x="64.33333333333326" y="-13.0" />
+      <point x="478.49317129629617" y="490.0" />
+      <point x="1847.668303571429" y="490.0" />
+      <point x="0.0" y="13.0" />
+    </edge>
+    <edge source="com.netflix.loadbalancer.ZoneAwareLoadBalancer" target="com.netflix.loadbalancer.DynamicServerListLoadBalancer">
+      <point x="-27.571428571428555" y="-13.0" />
+      <point x="1579.0968750000006" y="404.0" />
+      <point x="1590.42607473545" y="404.0" />
+      <point x="0.0" y="13.0" />
+    </edge>
+    <edge source="org.springframework.cloud.netflix.feign.ribbon.LoadBalancerFeignClient" target="feign.Client">
+      <point x="25.875" y="-13.0" />
+      <point x="723.6504464285717" y="268.0" />
+      <point x="799.3265046296297" y="268.0" />
+      <point x="-11.0" y="13.0" />
+    </edge>
+    <edge source="com.netflix.loadbalancer.DynamicServerListLoadBalancer" target="com.netflix.loadbalancer.BaseLoadBalancer">
+      <point x="99.60000000000002" y="-13.0" />
+      <point x="1690.02607473545" y="288.0" />
+      <point x="1692.9260747354501" y="288.0" />
+      <point x="-13.166666666666629" y="13.0" />
+    </edge>
+    <edge source="org.springframework.cloud.netflix.feign.ribbon.FeignLoadBalancer" target="com.netflix.loadbalancer.LoadBalancerContext">
+      <point x="55.0" y="-13.0" />
+      <point x="475.1598379629629" y="172.0" />
+      <point x="597.1598379629629" y="172.0" />
+      <point x="0.0" y="13.0" />
+    </edge>
+    <edge source="com.netflix.loadbalancer.BaseLoadBalancer" target="com.netflix.loadbalancer.ILoadBalancer">
+      <point x="52.66666666666663" y="-13.0" />
+      <point x="1758.7594080687832" y="142.0" />
+      <point x="1680.3379464285717" y="142.0" />
+      <point x="1680.3379464285717" y="46.0" />
+      <point x="707.4572751322753" y="46.0" />
+      <point x="54.799999999999955" y="13.0" />
+    </edge>
+    <edge source="org.springframework.cloud.netflix.feign.ribbon.FeignLoadBalancer" target="com.netflix.client.IClient">
+      <point x="0.0" y="-13.0" />
+      <point x="0.0" y="13.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.7375249500998003" x="1012.0000000000001" y="281.0" />
+  <SelectedNodes>
+    <node>org.springframework.cloud.netflix.ribbon.eureka.DomainExtractingServerList</node>
+  </SelectedNodes>
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
